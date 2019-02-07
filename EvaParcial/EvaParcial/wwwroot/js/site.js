@@ -253,6 +253,7 @@ var Imprimir_Cliente = () => {
     window.print();
     document.body.innerHTML = contenidopaginaoriginal;
     $('#Reporte').modal('hide');
+    quitar_Botones();
 }
 
 var Imprimir_Distribuidor = () => {
@@ -261,7 +262,7 @@ var Imprimir_Distribuidor = () => {
     document.body.innerHTML = contenido;
     window.print();
     document.body.innerHTML = contenidopaginaoriginal;
-    $('#Reporte').modal('hide');
+    $('#Reporte1').modal('hide');
 }
 
 var Imprimir_Pedidos = () => {
@@ -270,7 +271,7 @@ var Imprimir_Pedidos = () => {
     document.body.innerHTML = contenido;
     window.print();
     document.body.innerHTML = contenidopaginaoriginal;
-    $('#Reporte').modal('hide');
+    $('#Reporte2').modal('hide');
 }
 
 var Imprimir_Entrega = () => {

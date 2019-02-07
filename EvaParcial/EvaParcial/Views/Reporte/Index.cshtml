@@ -4,10 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Reportes Generales</h2>
+<br />
+<br />
 <a class="btn btn-primary" data-target="#Reporte" onclick="listaClientes()"
-   data-toggle="modal">Imprimir Reporte</a>
+   data-toggle="modal">Imprimir Reporte Cliente</a>
+<br />
+<br />
+<br />
+
+<a class="btn btn-primary" data-target="#Reporte1" onclick="listaClientes()"
+   data-toggle="modal">Imprimir Reporte Distribuidores</a>
+<br />
+<br />
+<br />
+
+<a class="btn btn-primary" data-target="#Reporte2" onclick="listaPedidos()"
+   data-toggle="modal">Imprimir Reporte de Pedidos</a>
 
 <div class="modal fade" id="Reporte" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
     <div class="modal-dialog" role="document">
@@ -25,7 +38,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            
+
                             <th>
                                 Nombre
                             </th>
@@ -35,7 +48,7 @@
                             <th>
                                 Ruc
                             </th>
-                            
+
                         </tr>
                     </thead>
                     <tbody id="Cuerpo_Cliente"></tbody>
@@ -45,6 +58,95 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
                 <button id="graba" type="button" class="btn btn-primary"
                         onclick="quitar_Botones(); Imprimir_Cliente()">
+                    Emprimir
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Reporte1" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Lista de Distribuidores
+                </h4>
+            </div>
+            <div class="modal-body" id="Imprimir_Distribuidor">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Nombres
+                            </th>
+                            <th>
+                                Direccion
+                            </th>
+                            <th>
+                                listaReseptor
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="Cuerpo_Distribuidor"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary"
+                        onclick="quitar_Botones1(); Imprimir_Distribuidor()">
+                    Emprimir
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Reporte2" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Lista de Pedidos
+                </h4>
+            </div>
+            <div class="modal-body" id="Imprimir_Pedidos">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Fecha
+                            </th>
+                            <th>
+                                Nombre del Corte
+                            </th>
+                            <th>
+                                Numero de Piezas por corte
+                            </th>
+                            <th>
+                                Peso de la Carne
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="Cuerpo_Pedidos"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary"
+                        onclick="quitar_Botones2(); Imprimir_Pedidos()">
                     Emprimir
                 </button>
             </div>
