@@ -55,7 +55,7 @@
             url: accion,
             data: { idDistribuidor },
             success: (respuesta) => {
-                console.log(respuesta);
+               
                 document.getElementById("Nombres").value = respuesta.nombres;
                 document.getElementById("Direccion").value = respuesta.direccion;
                 document.getElementById("listaReseptor").value = respuesta.listaReseptor;

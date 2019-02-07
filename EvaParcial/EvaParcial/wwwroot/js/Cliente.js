@@ -55,10 +55,10 @@
             url: accion,
             data: { idCliente },
             success: (respuesta) => {
-                console.log(respuesta);
-                document.getElementById("Nombre").value = respuesta.Nombre;
-                document.getElementById("Direccion").value = respuesta.Direccion;
-                document.getElementById("Ruc").value = respuesta.Ruc;
+             
+                document.getElementById('Nombre').value = respuesta.Nombre;
+                document.getElementById('Direccion').value = respuesta.Direccion;
+                document.getElementById('Ruc').value = respuesta.Ruc;
                 document.getElementById("idCliente").value = respuesta.idCliente;
             }
         });
