@@ -1,0 +1,38 @@
+﻿@model EvaParcial.Models.Detalle
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Actualizar Clientes y Distribuidores</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idDetalle" />
+            <div class="form-group">
+                <label asp-for="idCliente" class="control-label"></label>
+                <select asp-for="idCliente" class="form-control" asp-items="ViewBag.idCliente"></select>
+                <span asp-validation-for="idCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idDistribuidor" class="control-label"></label>
+                <select asp-for="idDistribuidor" class="form-control" asp-items="ViewBag.idDistribuidor"></select>
+                <span asp-validation-for="idDistribuidor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

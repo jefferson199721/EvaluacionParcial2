@@ -1,0 +1,33 @@
+﻿@model EvaParcial.Models.EstableserEntrega
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Detalle</h2>
+
+<h3>Esta Seguro que desea eliminar..?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Entrega
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrega.Fecha)
+        </dd>
+        <dt>
+            Pedidos
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pedidos.NomCorte)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idEsEntrega" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> 
+       
+    </form>
+</div>

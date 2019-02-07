@@ -1,0 +1,74 @@
+﻿@model IEnumerable<EvaParcial.Models.Clientes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de Clientes</h2>
+
+<p>
+    <a class="btn btn-primary" data-toggle="modal" data-target="#Ingreso_Cliente">Nuevo Cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombres
+            </th>
+            <th>
+                Direccion
+            </th>
+            <th>
+                Ruc
+            </th>
+        </tr>
+    </thead>
+    <tbody id="Cuerpo_Cliente"></tbody>
+</table>
+
+<div class="modal fade" id="Ingreso_Cliente" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Ingreso de Clientes
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" name="idCliente" id="idCliente" />
+                    <div class="form-group">
+                        <label class="control-label">Nombres</label>
+                        <input id="Nombres" name="Nombres" class="form-control"
+                               type="text" placeholder="Ingrese la Nombres del cliente" />
+                        <span  class="label-danger hidden">Campo Obligatorio</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Direccion</label>
+                        <input id="Direccion" name="Direccion" class="form-control"
+                               type="text" placeholder="Ingrese la direccion del cliente" />
+                        <span id="control_Nombre" class="label-danger hidden">La direccion es requerida</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Ruc</label>
+                        <input id="Ruc" name="Ruc" class="form-control"
+                               type="text" placeholder="Ingrese el Telefono del cliente" />
+                        <span id="control_Direccion" class="label-danger hidden">El Ruc es requerido</span>
+                    </div>
+
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary" onclick="nuevo_Cliente()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

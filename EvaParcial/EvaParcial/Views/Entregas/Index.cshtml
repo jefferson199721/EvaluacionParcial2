@@ -1,0 +1,67 @@
+﻿@model IEnumerable<EvaParcial.Models.Entrega>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de Entregas</h2>
+
+<p>
+    <a class="btn btn-primary" data-toggle="modal" data-target="#Ingreso_Entrega">Nueva Entrega</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Responsable acargo que recibe
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody id="Cuerpo_Entregas"></tbody>
+</table>
+
+<div class="modal fade" id="Ingreso_Entrega" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Ingreso de Entregas
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" name="idEntrega" id="idEntrega" />
+                    <div class="form-group">
+                        <label class="control-label">Fecha de Entrega</label>
+                        <input id="Fecha" name="Fecha" class="form-control"
+                               type="date" placeholder="Ingrese la fecha de la entrega" />
+                        <span class="label-danger hidden">Campo Obligatorio</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Responsable acargo que recibe</label>
+                        <input id="ResponsableResive" name="ResponsableResive" class="form-control"
+                               type="text" placeholder="Ingrese el Responsable acargo que recibe" />
+                        <span id="control_Responsable acargo que recibe" class="label-danger hidden">El Responsable acargo que recibe</span>
+                    </div>
+
+                
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary" onclick="nuevo_Entrega()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

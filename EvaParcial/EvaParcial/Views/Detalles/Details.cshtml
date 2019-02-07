@@ -1,0 +1,30 @@
+﻿@model EvaParcial.Models.Detalle
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Detalle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.idCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Distribuidores)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Distribuidores.idDistribuidor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idDetalle">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

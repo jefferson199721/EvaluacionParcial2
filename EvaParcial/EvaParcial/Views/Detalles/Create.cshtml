@@ -1,0 +1,34 @@
+﻿@model EvaParcial.Models.Detalle
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Nuevo Clientes y Distribuidores </h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="idCliente" class="control-label"></label>
+                <select asp-for="idCliente" class ="form-control" asp-items="ViewBag.idCliente"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="idDistribuidor" class="control-label"></label>
+                <select asp-for="idDistribuidor" class ="form-control" asp-items="ViewBag.idDistribuidor"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

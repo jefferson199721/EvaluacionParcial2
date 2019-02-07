@@ -1,0 +1,38 @@
+﻿@model EvaParcial.Models.RealizarPedido
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar el pedido realizado..?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Fecha
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+        <dt>
+            Cliente
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+        <dt>
+            Pedidos
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pedidos.NomCorte)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idPedido" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> 
+    </form>
+</div>

@@ -1,0 +1,42 @@
+﻿@model EvaParcial.Models.RealizarPedido
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar el pedido realizado </h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idPedido" />
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idCliente" class="control-label"></label>
+                <select asp-for="idCliente" class="form-control" asp-items="ViewBag.idCliente"></select>
+                <span asp-validation-for="idCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idPedidos" class="control-label"></label>
+                <select asp-for="idPedidos" class="form-control" asp-items="ViewBag.idPedidos"></select>
+                <span asp-validation-for="idPedidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EvaParcial.Models.Detalle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado de Clientes y Distribuidores</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Cliente
+            </th>
+            <th>
+                Distribuidores
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clientes.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distribuidores.Nombres)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.idDetalle">Editar</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.idDetalle">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

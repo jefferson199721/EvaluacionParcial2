@@ -1,0 +1,36 @@
+﻿@model EvaParcial.Models.EstableserEntrega
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar Detalle</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idEsEntrega" />
+            <div class="form-group">
+                <label asp-for="idEntrega" class="control-label"></label>
+                <select asp-for="idEntrega" class="form-control" asp-items="ViewBag.idEntrega"></select>
+                <span asp-validation-for="idEntrega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idPedidos" class="control-label"></label>
+                <select asp-for="idPedidos" class="form-control" asp-items="ViewBag.idPedidos"></select>
+                <span asp-validation-for="idPedidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
