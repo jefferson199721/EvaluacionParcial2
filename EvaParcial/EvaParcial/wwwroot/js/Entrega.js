@@ -54,8 +54,8 @@
             data: { idEntrega },
             success: (respuesta) => {
                 console.log(respuesta);
-                document.getElementById("Fecha").value = respuesta.Fecha;
-                document.getElementById("ResponsableResive").value = respuesta.ResponsableResive;
+                document.getElementById("Fecha").value = respuesta.fecha;
+                document.getElementById("ResponsableResive").value = respuesta.responsableResive;
                 document.getElementById("idEntrega").value = respuesta.idEntrega;
             }
         });
