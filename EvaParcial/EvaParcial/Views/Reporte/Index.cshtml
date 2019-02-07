@@ -4,6 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <h2>Reportes Generales</h2>
 <br />
 <br />
@@ -21,6 +27,12 @@
 
 <a class="btn btn-primary" data-target="#Reporte2" onclick="listaPedidos()"
    data-toggle="modal">Imprimir Reporte de Pedidos</a>
+<br />
+<br />
+<br />
+
+<a class="btn btn-primary" data-target="#Reporte3" onclick="listaEntrega()"
+   data-toggle="modal">Imprimir Reporte de Entregas</a>
 
 <div class="modal fade" id="Reporte" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
     <div class="modal-dialog" role="document">
@@ -147,6 +159,47 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
                 <button id="graba" type="button" class="btn btn-primary"
                         onclick="quitar_Botones2(); Imprimir_Pedidos()">
+                    Emprimir
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Reporte3" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Lista de Entregas
+                </h4>
+            </div>
+            <div class="modal-body" id="Imprimir_Entrega">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Fecha
+                            </th>
+                            <th>
+                                Nombre del responsable
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="Cuerpo_Entregas"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary"
+                        onclick="quitar_Botones3(); Imprimir_Entrega()">
                     Emprimir
                 </button>
             </div>

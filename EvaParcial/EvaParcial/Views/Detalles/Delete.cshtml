@@ -3,7 +3,10 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<br />
+<br />
+<br />
+<br />
 <h2>Eliminar Clientes y Distribuidores</h2>
 
 <h3>Esta seguro que desea elimina...?</h3>
@@ -18,16 +21,16 @@
             @Html.DisplayFor(model => model.Clientes.idCliente)
         </dd>
         <dt>
-           Distribuidores
+            Distribuidores
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Distribuidores.idDistribuidor)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="idDetalle" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> 
-        
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+
     </form>
 </div>

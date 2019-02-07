@@ -3,7 +3,10 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<br />
+<br />
+<br />
+<br />
 <h2>Listado de Clientes y Distribuidores</h2>
 
 <p>
@@ -13,7 +16,7 @@
     <thead>
         <tr>
             <th>
-               Cliente
+                Cliente
             </th>
             <th>
                 Distribuidores
@@ -22,19 +25,20 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clientes.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distribuidores.Nombres)
-            </td>
-            <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.idDetalle">Editar</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.idDetalle">Eliminar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clientes.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distribuidores.Nombres)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.idDetalle">Editar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.idDetalle">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

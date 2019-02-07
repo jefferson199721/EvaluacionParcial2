@@ -3,12 +3,15 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<br />
+<br />
+<br />
+<br />
 <h2>Eliminar Detalle</h2>
 
 <h3>Esta Seguro que desea eliminar..?</h3>
 <div>
-   
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,10 +27,10 @@
             @Html.DisplayFor(model => model.Pedidos.NomCorte)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="idEsEntrega" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> 
-       
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+
     </form>
 </div>

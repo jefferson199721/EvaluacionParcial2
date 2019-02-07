@@ -3,7 +3,10 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<br />
+<br />
+<br />
+<br />
 <h2>Estableser Entrega</h2>
 
 <p>
@@ -13,28 +16,29 @@
     <thead>
         <tr>
             <th>
-               Entrega
+                Entrega
             </th>
             <th>
-              Pedidos
+                Pedidos
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Entrega.Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pedidos.NomCorte)
-            </td>
-            <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.idEsEntrega">Editar</a> |
-                <a  class="btn btn-danger" asp-action="Delete" asp-route-id="@item.idEsEntrega">Eliminar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Entrega.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pedidos.NomCorte)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.idEsEntrega">Editar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.idEsEntrega">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -3,7 +3,10 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<br />
+<br />
+<br />
+<br />
 <h2>Nuevo Clientes y Distribuidores </h2>
 
 
@@ -14,11 +17,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="idCliente" class="control-label"></label>
-                <select asp-for="idCliente" class ="form-control" asp-items="ViewBag.idCliente"></select>
+                <select asp-for="idCliente" class="form-control" asp-items="ViewBag.idCliente"></select>
             </div>
             <div class="form-group">
                 <label asp-for="idDistribuidor" class="control-label"></label>
-                <select asp-for="idDistribuidor" class ="form-control" asp-items="ViewBag.idDistribuidor"></select>
+                <select asp-for="idDistribuidor" class="form-control" asp-items="ViewBag.idDistribuidor"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-success" />
